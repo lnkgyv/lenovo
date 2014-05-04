@@ -1,0 +1,17 @@
+#!/bin/bash
+current="$(cat /sys/class/backlight/intel_backlight/brightness)"
+case "$1" in
+	up)
+	   rate="$((current+100))"
+	   ;;
+	down)
+	   rate="$((current-100))"
+	   ;;
+	*)
+	   echo "Unknow parameter!!! Usage: $0 {up|down} "
+	   exit 1
+	   ;;
+esac
+
+echo "$rate" > /sys/class/backlight/intel_backlight/brightness
+exit 0
