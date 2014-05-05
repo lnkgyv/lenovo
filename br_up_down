@@ -1,3 +1,8 @@
+#Use this script for change backlight brightness.
+#To do: bind in your favorite DE(Desktop enviorement)
+#keys Fn+Down -> "br_up_down down"
+#     Fn+Up   -> "br_up_down up".
+#After this add this script in /etc/sudoerrs for your user.
 #!/bin/bash
 current="$(cat /sys/class/backlight/intel_backlight/brightness)"
 case "$1" in
